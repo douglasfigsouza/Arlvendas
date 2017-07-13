@@ -201,10 +201,12 @@
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MecanicosController.cs" />
     <Compile Include="Controllers\VendasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CLIENTES.cs" />
     <Compile Include="Models\ClientesRepository.cs" />
@@ -212,6 +214,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MECANICOS.cs" />
+    <Compile Include="Models\MecanicosRepository.cs" />
     <Compile Include="Models\PRODUTOS.cs" />
     <Compile Include="Models\VEICULOS.cs" />
     <Compile Include="Models\VENDA.cs" />
@@ -288,6 +291,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Mecanicos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

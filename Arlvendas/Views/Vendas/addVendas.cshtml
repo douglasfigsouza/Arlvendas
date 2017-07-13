@@ -1,16 +1,55 @@
-﻿<div class="row" ng-controller="GesCtrl">
-    <table class="table">
-        <tr>
-            <th>ID</th>
-            <th>Cliente</th>
-            <th>Endereço</th>
-        </tr>
-        <tbody ng-repeat="cli in lstClientes">
-            <tr>
-                <td>{{cli.IDCLI}}</td>
-                <td>{{cli.NOMECLI}}</td>
-                <td>{{cli.ENDERECOCLI}}</td>
-            </tr>
-        </tbody>
-    </table>
+﻿@model Arlvendas.Models.VENDA
+<div class="row" ng-controller="GesCtrl">
+    <div class="col-md-6">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            {
+                <fieldset>
+                    <legend>Cadastro Vendas</legend>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            @Html.LabelFor(v => v.DATAENTRADA, new { @class = "col-md-12 control-label" })
+                            @Html.TextBoxFor(v => v.DATAENTRADA, new { @class = "col-md-12 form-control", @type = "date", ng_model = "ven.dataEntrada" })
+                        </div>
+                        <div class="col-md-6 form-group">
+                            @Html.LabelFor(v => v.DATASAIDA, new { @class = "col-md-12 control-label" })
+                            @Html.TextBoxFor(v => v.DATASAIDA, new { @class = "col-md-12 form-control", @type = "date", ng_model = "ven.dataSaida" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <select class="form-control"
+                                    ng-model="cli.Id"
+                                    ng-options="cli.IDCLI as cli.NOMECLI for cli in lstClientes" material-select watch>
+                                <option value="">Selecione um cliente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <select class="form-control"
+                                    ng-model="mec.Id"
+                                    ng-options="mec.IDMEC as mec.NOMEMEC for mec in lstMecanicos" material-select watch>
+                                <option value="">Selecione um Mecanico</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <fieldset>
+                            <legend>Adicionar Peças</legend>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label class="col-md-12 control-label">Produto</label>
+                                    <input type="text" class="col-md-12 form-control"ng-model="prod.descProd" />
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label class="col-md-12 control-label">Produto</label>
+                                    <input type="text" class="col-md-12 form-control" ng-model="prod.descProd" />
+                                </div>
+                            </div>
+                        </fieldset>  
+                    </div>
+                </fieldset>
+            }
+        }
+    </div>
 </div>

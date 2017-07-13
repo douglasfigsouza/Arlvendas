@@ -19,9 +19,11 @@ namespace Arlvendas.Models
 
         [Required]
         [StringLength(200)]
+        [Display(Name ="Nome")]
         public string NOMECLI { get; set; }
 
         [StringLength(200)]
+        [Display(Name ="Endereço")]
         public string ENDERECOCLI { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

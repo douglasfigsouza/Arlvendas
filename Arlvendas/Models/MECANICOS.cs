@@ -19,6 +19,7 @@ namespace Arlvendas.Models
 
         [Required]
         [StringLength(200)]
+        [Display(Name ="Mecânico")]
         public string NOMEMEC { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

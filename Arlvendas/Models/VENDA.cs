@@ -9,6 +9,11 @@ namespace Arlvendas.Models
     [Table("VENDA")]
     public partial class VENDA
     {
+        public VENDA()
+        {
+            PRODUTOSDAVENDA = HashSet<PRODUTOSDAVENDA>();
+           
+        }
         [Key]
         [Column(Order = 0)]
         public int IDVENDA { get; set; }
@@ -42,5 +47,6 @@ namespace Arlvendas.Models
         public virtual PRODUTOS PRODUTOS { get; set; }
 
         public virtual VEICULOS VEICULOS { get; set; }
+        public ICollection<PRODUTOSDAVENDA> PRODUTOSDAVENDA { get; set; }
     }
 }

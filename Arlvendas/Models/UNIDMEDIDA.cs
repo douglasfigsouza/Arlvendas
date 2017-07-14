@@ -6,27 +6,26 @@ namespace Arlvendas.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class PRODUTOS
+    [Table("UNIDMEDIDA")]
+    public partial class UNIDMEDIDA
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PRODUTOS()
+        public UNIDMEDIDA()
         {
-            VENDA = new HashSet<VENDA>();
-            PRODUTOSDAVENDA = new HashSet<PRODUTOSDAVENDA>();
-
+            PRODUTOS = new HashSet<PRODUTOS>();
         }
 
         [Key]
-        public int IDPROD { get; set; }
+        public int IDUNID { get; set; }
+
+        [StringLength(50)]
+        public string DESCUNID { get; set; }
 
         [Required]
-        [StringLength(200)]
-        public string DESCPROD { get; set; }
-
-        public decimal VALUNPROD { get; set; }
+        [StringLength(2)]
+        public string SIGLAUNID { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VENDA> VENDA { get; set; }
-        public virtual ICollection<PRODUTOSDAVENDA> PRODUTOSDAVENDA { get; set;}
+        public virtual ICollection<PRODUTOS> PRODUTOS { get; set; }
     }
 }

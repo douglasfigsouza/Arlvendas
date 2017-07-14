@@ -1,4 +1,4 @@
-﻿@model Arlvendas.Models.VENDA
+﻿@model Arlvendas.Models.VENDAS
 <div class="row" ng-controller="GesCtrl">
     <div class="col-md-6">
         @using (Html.BeginForm())
@@ -9,12 +9,12 @@
                     <legend>Cadastro Vendas</legend>
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            @Html.LabelFor(v => v.DATAENTRADA, new { @class = "col-md-12 control-label" })
-                            @Html.TextBoxFor(v => v.DATAENTRADA, new { @class = "col-md-12 form-control", @type = "date", ng_model = "ven.dataEntrada" })
+                            @Html.LabelFor(v => v.DATAINICIO, new { @class = "col-md-12 control-label" })
+                            @Html.TextBoxFor(v => v.DATAINICIO, new { @class = "col-md-12 form-control", @type = "date", ng_model = "ven.dataEntrada" })
                         </div>
                         <div class="col-md-6 form-group">
-                            @Html.LabelFor(v => v.DATASAIDA, new { @class = "col-md-12 control-label" })
-                            @Html.TextBoxFor(v => v.DATASAIDA, new { @class = "col-md-12 form-control", @type = "date", ng_model = "ven.dataSaida" })
+                            @Html.LabelFor(v => v.DATATERMINO, new { @class = "col-md-12 control-label" })
+                            @Html.TextBoxFor(v => v.DATATERMINO, new { @class = "col-md-12 form-control", @type = "date", ng_model = "ven.dataSaida" })
                         </div>
                     </div>
                     <div class="row">

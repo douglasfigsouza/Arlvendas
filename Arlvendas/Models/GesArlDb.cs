@@ -17,6 +17,8 @@ namespace Arlvendas.Models
         public virtual DbSet<PRODUTOS> PRODUTOS { get; set; }
         public virtual DbSet<VEICULOS> VEICULOS { get; set; }
         public virtual DbSet<VENDA> VENDA { get; set; }
+        public virtual DbSet<PRODUTOSDAVENDA> PRODUTOSDAVENDA { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

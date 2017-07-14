@@ -34,8 +34,6 @@ namespace Arlvendas.Models
         public DateTime? DATAENTRADA { get; set; }
         [Display(Name = "Término do Serviço")]
         public DateTime? DATASAIDA { get; set; }
-        [StringLength(2)]
-        public string UNIDMEDIDA { get; set; }
 
         public virtual CLIENTES CLIENTES { get; set; }
 

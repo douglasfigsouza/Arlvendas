@@ -22,6 +22,8 @@ namespace Arlvendas.Models
         public string DESCPROD { get; set; }
 
         public decimal VALUNPROD { get; set; }
+        [StringLength(5)]
+        public string UNIDMEDIDA { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VENDA> VENDA { get; set; }

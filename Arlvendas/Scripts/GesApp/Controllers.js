@@ -1,4 +1,5 @@
 ﻿app.controller("GesCtrl", function ($scope, GesService) {
+    $scope.Produtos = [{}];
     getAllMecanicos();
     getAllClientes();
     function getAllClientes() {
@@ -18,5 +19,16 @@
         }, function (error) {
             alert("Ops! Não foi possivel buscas os mecanicos");
         });
+    };
+
+    $scope.addProduto = function () {
+        $scope.Produtos.push(
+        {
+            DESCPROD: $scope.prod.descProd,
+            VALUNPROD: $scope.prod.valorProd,
+            UNIDMEDIDAPROD: $scope.prod.unidProd,
+            QTD: $scope.prod.qtdProd
+        });
+        console.log($scope.Produtos);
     };
 });

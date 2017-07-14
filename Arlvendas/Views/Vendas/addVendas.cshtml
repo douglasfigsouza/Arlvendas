@@ -34,16 +34,52 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-12"></div>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>QTD</th>
+                                <th>UN</th>
+                                <th>PRODUTO</th>
+                                <th>VALOR</th>
+                                <th>EXCLUIR</th>
+                            </tr>
+                            <tbody ng-repeat="prod in Produtos">
+                                <tr>
+                                    <td>{{prod.QTD}}</td>
+                                    <td>{{prod.UNIDMEDIDA}}</td>
+                                    <td>{{prod.DESCPROD}}</td>
+                                    <td>{{prod.VALUNPROD}}</td>
+                                    <td><button class="btn btn-danger"ng-click="delProd(prod)"></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
                         <fieldset>
                             <legend>Adicionar Peças</legend>
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <label class="col-md-12 control-label">Produto</label>
-                                    <input type="text" class="col-md-12 form-control"ng-model="prod.descProd" />
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="col-md-12 control-label">Produto</label>
+                                        <input type="text" class="col-md-12 form-control" ng-model="prod.descProd" />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                        <label class="col-md-12 control-label">Qtd</label>
+                                        <input type="text" class="col-md-12 form-control" ng-model="prod.qtdProd" />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                        <label class="col-md-12 control-label">Un</label>
+                                        <input type="text" class="col-md-12 form-control" ng-model="prod.unidProd" />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                        <label class="col-md-12 control-label">Valor</label>
+                                        <input type="text" class="col-md-12 form-control" ng-model="prod.valorProd" />
+                                    </div>
                                 </div>
-                                <div class="col-md-6 form-group">
-                                    <label class="col-md-12 control-label">Produto</label>
-                                    <input type="text" class="col-md-12 form-control" ng-model="prod.descProd" />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-success btn-block"ng-click="addProduto();">Adicionar</button>
+                                    </div>
                                 </div>
                             </div>
                         </fieldset>  
